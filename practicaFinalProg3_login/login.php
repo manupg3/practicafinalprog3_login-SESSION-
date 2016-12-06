@@ -3,7 +3,7 @@
 	  
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="icon" href="http://www.octavio.com.ar/favicon.ico">
+		
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="css/estilo.css">
 		<link rel="stylesheet" type="text/css" href="css/animacion.css">
@@ -21,22 +21,19 @@
 	    </script>
 	    <body>
 <div class="container">
-		<div class="page-header">
+		<div >
 			<center> <h1>LOGIN</h1>   </center>     
 		</div>
 		<div class="CajaInicio animated bounceInRight">
             
-			<form id="FrmLog">
-				<input type="text" name="user" id="user" placeholder="ingrese usuario" /><span id="lblApellido" style="display:none;color:#FF0000;width:1%;float:right;font-size:80">*</span>
-				<input type="text" name="psw" id="psw" placeholder="ingrese password" /> <span id="lblNombre" style="display:none;color:#FF0000;width:1%;float:right;font-size:80">*</span>
+			<form id="FrmLog" method="post" >
+				<input type="text" name="user" id="user" placeholder="ingrese usuario" />
+				<input type="text" name="psw" id="psw" placeholder="ingrese password" /> 
 			
-      
-			<button class="btn btn-info" onclick="validarLogin()" ><span class='glyphicon glyphicon-save'>&nbsp;</span>LOGEARSE</button>
-				
-				</div>
 
-			</form>
-				</div>
-	</div>
+			<button class="btn btn-info" onclick="validarLogin();return false">LOGEARSE</button>
+		 </form>
+		</div>
+		</div>
 </body>
 

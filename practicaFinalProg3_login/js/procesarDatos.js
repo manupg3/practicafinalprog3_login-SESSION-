@@ -13,7 +13,7 @@ function GuardarPersona(id){
        
 	$.ajax({
 	        type: "POST",
-	        url: "http://127.0.0.1/practicaFinalProg3/ws/index.php/personas/",
+	        url: "http://127.0.0.1/practicaFinalProg3_login/ws/index.php/personas/",
 	        data: {"nombre":nom,"apellido":ape,"dni":dnii,"foto":fotoo},
 	        dataType:"json",
 	        success: function(data, textStatus, jqXHR){
@@ -23,7 +23,7 @@ function GuardarPersona(id){
 	        },
 	        error: function(jqXHR, textStatus, errorThrown){
 	            console.log(errorThrown);
-	            alert("No se pudo modificar " + errorThrown);
+	            alert("No se pudo modificarrrr " + errorThrown);
 	        }
 	    });
       }
@@ -36,7 +36,7 @@ function GuardarPersona(id){
 
 	$.ajax({
 	        type: "PUT",
-	        url: "http://127.0.0.1/practicaFinalProg3/ws/index.php/personas/",
+	        url: "http://127.0.0.1/practicaFinalProg3_login/ws/index.php/personas/",
 	        data: {"nombre":nom,"apellido":ape,"dni":dnii,"foto":fotoo,"id":id},
 	       
 	        success: function(data, textStatus, jqXHR){
@@ -58,12 +58,20 @@ function validarLogin(){
    alert(usuario+pass);
      $.ajax({
 	        type: "POST",
-	        url: "http://127.0.0.1/practicaFinalProg3/ws/index.php/login/",
+	        url: "http://127.0.0.1/practicaFinalProg3_login/ws/index.php/login/",
 	        data: {"user":usuario,"password":pass},
-	       
+	  
 	        success: function(data, textStatus, jqXHR){
 	            // console.log(data);
+	           // alert(data);
+            // alert("asd");
+               if(data.user==usuario){
+
               CrearSession(data);
+	             }
+	             else{
+	             	alert("USUARIO INCORRECTO..");
+	             }
 	        },
 	        error: function(jqXHR, textStatus, errorThrown){
 	            console.log(errorThrown);
@@ -76,9 +84,10 @@ function CrearSession(data){
 	        type: "POST",
 	        url: "CrearSession.php",
 	        data: {"user":data.user},
+	       
 	          
 	        success: function(data, textStatus, jqXHR){
-	             console.log(data);
+	   //          console.log(data);
              document.location.href="index.php";
              alert("SERAS REDIRECCIONADO..");     
 

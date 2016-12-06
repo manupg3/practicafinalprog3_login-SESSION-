@@ -6,7 +6,7 @@ function Borrar(id)
 	// var id =document.getElementById();
 	$.ajax({
         type: 'DELETE',
-        url: "http://127.0.0.1/practicaFinalProg3/ws/index.php/personas/" + id,
+        url: "http://127.0.0.1/practicaFinalProg3_login/ws/index.php/personas/" + id,
         success: function(data, textStatus,jqXHR){
             console.log(textStatus);
             console.log("data"+data);
@@ -36,7 +36,7 @@ function Modificar(id)
  {               
  		$.ajax({
          type: 'GET',
-         url: "http://127.0.0.1/practicaFinalProg3/ws/index.php/personas/" + id,
+         url: "http://127.0.0.1/practicaFinalProg3_login/ws/index.php/personas/" + id,
         dataType:"json",
          success: function(data, textStatus, jqXHR){
               document.location.href="formAlta.php?nombre="+data[0].nombre+"&apellido="+data[0].apellido+"&dni="+data[0].dni+"&foto="+data[0].foto+"&id="+data[0].id;
@@ -70,7 +70,7 @@ function renderLista(data) {
 function cargar(){
 		$.ajax({
 	        type: "GET",
-	        url: "http://127.0.0.1/practicaFinalProg3/ws/index.php/personas/",
+	        url: "http://127.0.0.1/practicaFinalProg3_login/ws/index.php/personas/",
 	        success: function(data, textStatus, jqXHR){
 	            console.log(data,textStatus,jqXHR);
 	            renderLista(data);
